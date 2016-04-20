@@ -31,6 +31,7 @@
 		<!-- 商品的action -->
 		<action name="product_*" class="productAction" method="{1}">
 			<result name="findByPid">/WEB-INF/jsp/product.jsp</result>
+			<result name="findByCid">/WEB-INF/jsp/productList.jsp</result>
 		</action>
 	</package>
  

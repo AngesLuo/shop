@@ -44,6 +44,7 @@
 				<value>cn/itcast/shop/user/vo/User.hbm.xml</value>
 				<value>cn/itcast/shop/category/vo/Category.hbm.xml</value>
 				<value>cn/itcast/shop/product/vo/Product.hbm.xml</value>
+				<value>cn/itcast/shop/categorysecond/vo/CategorySecond.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

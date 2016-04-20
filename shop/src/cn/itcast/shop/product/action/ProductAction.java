@@ -1,6 +1,9 @@
 package cn.itcast.shop.product.action;
 
+import java.util.List;
+
 import cn.itcast.shop.category.service.CategoryService;
+import cn.itcast.shop.category.vo.Category;
 import cn.itcast.shop.product.service.ProductService;
 import cn.itcast.shop.product.vo.Product;
 
@@ -16,18 +19,29 @@ import com.opensymphony.xwork2.ModelDriven;
  * 
  */
 public class ProductAction extends ActionSupport implements ModelDriven<Product> {
-	// 用于接收数据的模型驱动.
-	private Product product = new Product();
+	
 	// 注入商品的Service
 	private ProductService productService;
-	
-	
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}
+	
+	//注入一级分类的service
+	private CategoryService categoryService;
+	public void setCategorservice(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
 
+		// 用于接收数据的模型驱动.
+		private Product product = new Product();
 	public Product getModel() {
 		return product;
+	}
+	
+	//接受分类cid
+	private Integer cid;
+	public void setCid(Integer cid) {
+		this.cid = cid;
 	}
 
 	// 根据商品的ID进行查询商品:执行方法:
@@ -36,5 +50,9 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 		product = productService.findByPid(product.getPid());
 		return "findByPid";
 	}
-
+	//根据分类id查询
+	public String findByCid(){
+		//List<Category> clist=categoryService.findAll();
+		return "findByCid";
+	}
 }
