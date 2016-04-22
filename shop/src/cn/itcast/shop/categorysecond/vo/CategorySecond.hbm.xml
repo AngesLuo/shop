@@ -8,8 +8,14 @@
 			<generator class="native"></generator>
 		</id>
 		<property name="csname"/>
-		
-		<many-to-one name="category" column="cid" class="cn.itcast.shop.category.vo.Category"></many-to-one>
+		<!-- 二级分类与以一级分类 关联-->
+		<many-to-one name="category" lazy="false" column="cid" class="cn.itcast.shop.category.vo.Category"></many-to-one>
+	
+		<!-- 二级分类与商品分的关联-->
+		<set name="products">
+			<key column="csid"></key>
+			<one-to-many class="cn.itcast.shop.product.vo.Product"/>
+		</set>
 	</class>
 	
 </hibernate-mapping>

@@ -6,6 +6,7 @@ import cn.itcast.shop.category.service.CategoryService;
 import cn.itcast.shop.category.vo.Category;
 import cn.itcast.shop.product.service.ProductService;
 import cn.itcast.shop.product.vo.Product;
+import cn.itcast.shop.utils.PageBean;
 
 
 import com.opensymphony.xwork2.ActionContext;
@@ -32,16 +33,24 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 		this.categoryService = categoryService;
 	}
 
-		// 用于接收数据的模型驱动.
-		private Product product = new Product();
+	// 用于接收数据的模型驱动.
+	private Product product = new Product();
 	public Product getModel() {
 		return product;
 	}
-	
+	//接收当前页数
+	private int page;
+	public void setPage(int page) {
+		this.page = page;
+	}
+
 	//接受分类cid
 	private Integer cid;
 	public void setCid(Integer cid) {
 		this.cid = cid;
+	}
+	public Integer getCid() {
+		return cid;
 	}
 
 	// 根据商品的ID进行查询商品:执行方法:
@@ -53,6 +62,9 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 	//根据分类id查询
 	public String findByCid(){
 		//List<Category> clist=categoryService.findAll();
+		PageBean<Product> pageBean = productService.findByPageCid(cid, page);// 根据一级分类查询商品,带分页查询
+		//将pagebean存入值栈中
+		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
 		return "findByCid";
 	}
 }

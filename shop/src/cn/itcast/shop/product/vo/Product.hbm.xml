@@ -12,6 +12,9 @@
 		<property name="pdesc"/>
 		<property name="is_hot"/>
 		<property name="pdate"/>
-		
+		<!--商品与二级分类的关联  -->
+		<many-to-one name="categorySecond" lazy="false" class="cn.itcast.shop.categorysecond.vo.CategorySecond" column="csid"></many-to-one>
+	
+	
 	</class>
 </hibernate-mapping>
