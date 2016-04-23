@@ -52,7 +52,14 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 	public Integer getCid() {
 		return cid;
 	}
-
+	//接受二级分类csid
+	private Integer csid;
+	public Integer getCsid() {
+		return csid;
+	}
+	public void setCsid(Integer csid) {
+		this.csid = csid;
+	}
 	// 根据商品的ID进行查询商品:执行方法:
 	public String findByPid() {
 		// 调用Service的方法完成查询.
@@ -66,5 +73,13 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 		//将pagebean存入值栈中
 		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
 		return "findByCid";
+	}
+	//根据二级分类的id查询商品
+	public String findByCsid(){
+		//根据二级分类查询
+		PageBean<Product> pageBean=productService.findByPageCsid(csid,page);
+		//将pagebean存入值栈中
+				ActionContext.getContext().getValueStack().set("pageBean", pageBean);
+		return "findByCsid";
 	}
 }

@@ -6,7 +6,11 @@
 <title>网上商城</title>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/product.css" rel="stylesheet" type="text/css">
-
+<script>
+	function saveCart(){
+		document.getElementById("cartForm").submit();
+	}
+</script>
 
 </head>
 <body>
@@ -29,156 +33,18 @@
 </div><div class="container productContent">
 		<div class="span6">
 			<div class="hotProductCategory">
+			<s:iterator value="#session.CList" var="c">
 						<dl>
 							<dt>
-								<a href="./蔬菜分类.htm">蔬菜</a>
+								<a href="${pageContext.request.contextPath}/product_findByCid.action?cid=<s:property value="#c.cid"/>&page=1"><s:property value="#c.cname"/></a>
 							</dt>
+								<s:iterator var="cs" value="#c.categorySeconds">
 									<dd>
-										<a >无公害蔬菜</a>
+										<a href="${pageContext.request.contextPath}/product_findByCsid.action?csid=<s:property value="#cs.csid"/>&page=1"><s:property value="#cs.csname"/></a>
 									</dd>
-									<dd>
-										<a>特菜类</a>
-									</dd>
-									<dd>
-										<a>有机蔬菜</a>
-									</dd>
-									<dd>
-										<a>蔬菜套餐</a>
-									</dd>
+								</s:iterator>	
 						</dl>
-						<dl>
-							<dt>
-								<a>水果</a>
-							</dt>
-									<dd>
-										<a>国产</a>
-									</dd>
-									<dd>
-										<a>进口</a>
-									</dd>
-									
-						</dl>
-						<dl>
-							<dt>
-								<a >肉类</a>
-							</dt>
-									<dd>
-										<a>猪肉</a>
-									</dd>
-									<dd>
-										<a>牛羊肉</a>
-									</dd>
-									<dd>
-										<a>家禽</a>
-									</dd>
-									<dd>
-										<a>鱼</a>
-									</dd>
-						</dl>
-						<dl>
-							<dt>
-								<a>蛋、奶及肉制品类</a>
-							</dt>
-									<dd>
-										<a>蛋</a>
-									</dd>
-									<dd>
-										<a>奶</a>
-									</dd>
-									<dd>
-										<a>豆制品</a>
-									</dd>
-						</dl>
-						<dl>
-							<dt>
-								<a >干果</a>
-							</dt>
-									<dd>
-										<a>干制坚果</a>
-									</dd>
-									<dd>
-										<a>干制果实/果肉</a>
-									</dd>
-									<dd>
-										<a >干制种仁</a>
-									</dd>
-									<dd>
-										<a>    </a>
-									</dd>
-						</dl>
-						<dl>
-							<dt>
-								<a >古薯杂粮</a>
-							</dt>
-									<dd>
-										<a >米类</a>
-									</dd>
-									<dd>
-										<a>杂粮</a>
-									</dd>
-									<dd>
-										<a>面粉</a>
-									</dd>
-									<dd>
-										<a >薯类</a>
-									</dd>
-						</dl>
-						<dl>
-							<dt>
-								<a>油</a>
-							</dt>
-									<dd>
-										<a >茶油</a>
-									</dd>
-									<dd>
-										<a >核桃油</a>
-									</dd>
-									<dd>
-										<a >橄榄油</a>
-									</dd>
-									<dd>
-										<a>芥花籽油</a>
-									</dd>
-						</dl>
-						<dl>
-							<dt>
-								<a>水、软饮</a>
-							</dt>
-									<dd>
-										<a >水</a>
-									</dd>
-									<dd>
-										<a>软饮</a>
-									</dd>
-						</dl>
-						<dl>
-							<dt>
-								<a >茶</a>
-							</dt>
-									<dd>
-										<a >绿茶</a>
-									</dd>
-									<dd>
-										<a>红茶</a>
-									</dd>
-									<dd>
-										<a >乌龙茶</a>
-									</dd>
-									<dd>
-										<a>白茶</a>
-									</dd>
-						</dl>
-						<dl class="last">
-							<dt>
-								<a>亿家卡</a>
-							</dt>
-									<dd>
-										<a >亿家卡</a>
-									</dd>
-									<dd>
-										<a>    </a>
-									</dd>
-						</dl>
+			</s:iterator>			
 			</div>
 			
 
@@ -217,12 +83,13 @@
 						</dd>
 					</dl>
 			</div>
-				<div class="action">
-					
+			<form action="${pageContext.request.contextPath }/cart_addCart.action" method="post" id="cartForm">
+				<input type="hidden" name="pid" value="<s:property value="model.pid"/>"/>
+					<div class="action">				
 						<dl class="quantity">
 							<dt>购买数量:</dt>
 							<dd>
-								<input id="quantity" name="quantity" value="1" maxlength="4" onpaste="return false;" type="text">
+								<input id="count" name="count" value="1" maxlength="4" onpaste="return false;" type="text">
 								
 							</dd>
 							<dd>
@@ -230,10 +97,11 @@
 							</dd>
 						</dl>
 					<div class="buy">
-							<input id="addCart" class="addCart" value="加入购物车" type="button">
+							<input id="addCart" class="addCart" value="加入购物车" type="button" onclick="saveCart()">
 				
 					</div>
 				</div>
+			</form>
 			<div id="bar" class="bar">
 				<ul>
 						<li id="introductionTab">
