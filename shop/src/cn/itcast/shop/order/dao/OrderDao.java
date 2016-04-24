@@ -39,8 +39,12 @@ public class OrderDao extends HibernateDaoSupport{
 		return null;
 	}
 	// DAO层根据订单id查询订单
-		public Order findByOid(Integer oid) {
-			return this.getHibernateTemplate().get(Order.class, oid);
-		}
+	public Order findByOid(Integer oid) {
+		return this.getHibernateTemplate().get(Order.class, oid);
+	}
+// DAO层修改订单
+	public void update(Order currOrder) {
+		this.getHibernateTemplate().update(currOrder);	
+	}
 
 }
