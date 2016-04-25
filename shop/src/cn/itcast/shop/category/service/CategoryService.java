@@ -25,5 +25,21 @@ public class CategoryService {
 	public List<Category> findAll() {
 		return categoryDao.findAll();
 	}
+	//业务层保存一节分类
+	public void save(Category category) {
+		categoryDao.save(category);
+	}
+	//根据业务层查询一级分类
+	public Category findByCid(Integer cid) {
+		return categoryDao.findByCid(cid);
+	}
+	//业务层删除一级分类
+	public void delete(Category category) {
+		categoryDao.delete(category);
+	}
+	//业务层修改一级分类
+	public void update(Category category) {
+		categoryDao.update(category);
+	}
 	
 }

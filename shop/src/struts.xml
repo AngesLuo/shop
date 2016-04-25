@@ -51,6 +51,21 @@
 			<result name="findByOid">/WEB-INF/jsp/order.jsp</result>
 		</action>
 		
+		<!-- 后台登录的action -->
+		<action name="adminUser_*" class="adminUserAction" method="{1}">
+			<result name="loginFail">/admin/index.jsp</result>
+			<result name="loginSuccess" type="redirect">/admin/home.jsp</result>
+		</action>
+		
+		<!-- 后台一级管理的action -->
+		<action name="adminCategory_*" class="adminCategoryAction" method="{1}">
+			<result name="findAll">/admin/category/list.jsp</result>
+			<result name="saveSuccess" type="redirectAction">adminCategory_findAll.action</result>
+			<result name="deleteSuccess" type="redirectAction">adminCategory_findAll.action</result>
+			<result name="editSuccess">/admin/category/edit.jsp</result>
+			<result name="updateSuccess" type="redirectAction">adminCategory_findAll.action</result>
+		</action>
+		
 		
 	</package>
  
