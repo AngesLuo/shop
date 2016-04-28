@@ -7,23 +7,24 @@
 		<link href="${pageContext.request.contextPath}/css/Style1.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 		<script type="text/javascript">
-			function addCategory(){
-				window.location.href = "${pageContext.request.contextPath}/admin/category/add.jsp";
+			function addProduct(){
+				window.location.href = "${pageContext.request.contextPath}/adminProduct_addPage.action";
 			}
 		</script>
 	</HEAD>
 	<body>
 		<br>
+		<form id="Form1" name="Form1" action="${pageContext.request.contextPath}/user/list.jsp" method="post">
 			<table cellSpacing="1" cellPadding="0" width="100%" align="center" bgColor="#f5fafe" border="0">
 				<TBODY>
 					<tr>
 						<td class="ta_01" align="center" bgColor="#afd1f3">
-							<strong>一级分类列表</strong>
+							<strong>商品列表</strong>
 						</TD>
 					</tr>
 					<tr>
 						<td class="ta_01" align="right">
-							<button type="button" id="add" name="add" value="添加" class="button_add" onclick="addCategory()">
+							<button type="button" id="add" name="add" value="添加" class="button_add" onclick="addProduct()">
 &#28155;&#21152;
 </button>
 
@@ -41,7 +42,16 @@
 										序号
 									</td>
 									<td align="center" width="17%">
-										一级分类名称
+										商品图片
+									</td>
+									<td align="center" width="17%">
+										商品名称
+									</td>
+									<td align="center" width="17%">
+										商品价格
+									</td>
+									<td align="center" width="17%">
+										是否热门
 									</td>
 									<td width="7%" align="center">
 										编辑
@@ -50,7 +60,7 @@
 										删除
 									</td>
 								</tr>
-									<s:iterator var="c" value="cList" status="status">
+									<s:iterator var="p" value="pageBean.list" status="status">
 										<tr onmouseover="this.style.backgroundColor = 'white'"
 											onmouseout="this.style.backgroundColor = '#F5FAFE';">
 											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
@@ -59,16 +69,33 @@
 											</td>
 											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 												width="17%">
-												<s:property value="#c.cname"/>
+												<img width="40" height="45" src="${ pageContext.request.contextPath }/<s:property value="#p.image"/>">
+											</td>
+											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
+												width="17%">
+												<s:property value="#p.pname"/>
+											</td>
+											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
+												width="17%">
+												<s:property value="#p.shop_price"/>
+											</td>
+											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
+												width="17%">
+												<s:if test="#p.is_hot==1">
+													是
+												</s:if>
+												<s:else>
+													否
+												</s:else>
 											</td>
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminCategory_edit.action?cid=<s:property value="#c.cid"/>">
+												<a href="${ pageContext.request.contextPath }/adminProduct_edit.action?pid=<s:property value="#p.pid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_edit.gif" border="0" style="CURSOR: hand">
 												</a>
 											</td>
 									
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminCategory_delete.action?cid=<s:property value="#c.cid"/>">
+												<a href="${ pageContext.request.contextPath }/adminProduct_delete.action?pid=<s:property value="#p.pid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_del.gif" width="16" height="16" border="0" style="CURSOR: hand">
 												</a>
 											</td>
@@ -77,8 +104,22 @@
 							</table>
 						</td>
 					</tr>
+					<tr align="center">
+						<td colspan="7">
+							第<s:property value="pageBean.page"/>/<s:property value="pageBean.totalPage"/>页 
+							<s:if test="pageBean.page != 1">
+								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=1">首页</a>|
+								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=<s:property value="pageBean.page-1"/>">上一页</a>|
+							</s:if>
+							<s:if test="pageBean.page != pageBean.totalPage">
+								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=<s:property value="pageBean.page+1"/>">下一页</a>|
+								<a href="${ pageContext.request.contextPath }/adminProduct_findAll.action?page=<s:property value="pageBean.totalPage"/>">尾页</a>|
+							</s:if>
+						</td>
+					</tr>
 				</TBODY>
 			</table>
+		</form>
 	</body>
 </HTML>
 

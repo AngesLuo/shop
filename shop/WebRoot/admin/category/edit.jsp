@@ -8,14 +8,15 @@
 	</HEAD>
 	
 	<body>
-		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminCategory_update.action" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="cid" value="<s:property value="model.cid"/>"/>
+		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminCategory_update.action" method="post">
+			<input type="hidden" name="cid" value="<s:property value="model.cid"/>" />
 			&nbsp;
 			<table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
 				<tr>
 					<td class="ta_01" align="center" bgColor="#afd1f3" colSpan="4"
 						height="26">
-						<STRONG>编辑一级分类</STRONG>	
+						<strong><STRONG>编辑一级分类</STRONG>
+						</strong>
 					</td>
 				</tr>
 
