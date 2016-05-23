@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 /**
- * 后台用户的action
+ * 鍚庡彴鐢ㄦ埛鐨刟ction   史纯涛
  * @author Anges
  *
  */
@@ -20,22 +20,22 @@ public class AdminUserAction extends ActionSupport implements ModelDriven<AdminU
 	public AdminUser getModel() {
 		return adminUser;
 	}
-	//注入service
+	//娉ㄥ叆service
 	private AdminUserService adminUserService;
 
 	public void setAdminUserService(AdminUserService adminUserService) {
 		this.adminUserService = adminUserService;
 	}
-	//后台登陆的方法
+	//鍚庡彴鐧婚檰鐨勬柟娉�
 	public String login(){
-		//调用service完成登录
+		//璋冪敤service瀹屾垚鐧诲綍
 		AdminUser existAdminUser=adminUserService.login(adminUser);
 		if(existAdminUser==null){
-			//登录失败
-			this.addActionError("你的密码或用户名错误");
+			//鐧诲綍澶辫触
+			this.addActionError("浣犵殑瀵嗙爜鎴栫敤鎴峰悕閿欒");
 			return "loginFail";
 		}else{
-			//登录成功
+			//鐧诲綍鎴愬姛
 			ServletActionContext.getRequest().getSession().setAttribute("existAdminUser", existAdminUser);
 			return "loginSuccess";
 			
