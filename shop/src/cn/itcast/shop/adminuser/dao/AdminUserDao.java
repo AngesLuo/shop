@@ -7,7 +7,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import cn.itcast.shop.adminuser.vo.AdminUser;
 
 /**
- * 后台登陆的dao类
+ * 后台登陆的dao类  lili
  * @author Anges
  *
  */
