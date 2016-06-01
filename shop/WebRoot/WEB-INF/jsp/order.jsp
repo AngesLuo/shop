@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-<title>订单页面</title>
+<title>网上商城订单页面</title>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/cart.css" rel="stylesheet" type="text/css"/>
 
