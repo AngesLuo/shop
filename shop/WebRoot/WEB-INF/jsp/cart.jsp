@@ -30,7 +30,7 @@
 	<%@ include file="menu.jsp" %>
 	
 </div>	<div class="container cart">
-	<s:if test="#session.cart.cartItems.size()!=0">
+		<s:if test="#session.cart.cartItems.size() != 0">
 		<div class="span24">
 			<div class="step step1">
 				购物车信息
@@ -87,11 +87,11 @@
 		</div>
 		</s:if>
 		<s:else>
-		<div class="span24">
-			<div class="step step1">
-				<h2>亲，你还未购物请去购物</h2>
+			<div class="span24">
+				<div class="step step1">
+					<span><h2>亲!您还没有购物!请先去购物!</h2></span>
+				</div>
 			</div>
-		</div>
 		</s:else>
 	</div>
 <div class="container footer">

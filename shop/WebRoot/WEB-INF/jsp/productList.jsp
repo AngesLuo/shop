@@ -31,7 +31,7 @@
 <div class="container productList">
 		<div class="span6">
 			<div class="hotProductCategory">
-				<s:iterator var="c" value="#session.CList">
+				<s:iterator var="c" value="#session.cList">
 						<dl>
 							<dt>
 								<a href="${pageContext.request.contextPath}/product_findByCid.action?cid=<s:property value="#c.cid"/>&page=1"><s:property value="#c.cname"/></a>

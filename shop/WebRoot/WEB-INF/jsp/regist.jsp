@@ -75,7 +75,7 @@
 	
 	function change(){
 		var img1 = document.getElementById("checkImg");
-		img1.src="${pageContext.request.contextPath}/checkImg.action?time="+new Date().getTime();
+		img1.src="${pageContext.request.contextPath}/checkImg.action?"+new Date().getTime();
 	}
 </script>
 </head>
@@ -227,7 +227,7 @@
 								<dt>已经拥有账号了？</dt>
 								<dd>
 									立即登录即可体验在线购物！
-									<a href="./会员登录.htm">立即登录</a>
+									<a href="${pageContext.request.contextPath}/user_loginPage.action">立即登录</a>
 								</dd>
 							</dl>
 						</div>
