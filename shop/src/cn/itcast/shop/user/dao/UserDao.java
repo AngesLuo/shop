@@ -26,20 +26,7 @@ public class UserDao extends HibernateDaoSupport{
 		// TODO Auto-generated method stub
 		this.getHibernateTemplate().save(user);
 	}
-	//根据激活码查询用户
-	public User findByCode(String code) {
-		String hql="from User where code=?";
-		List<User> list=this.getHibernateTemplate().find(hql,code);
-		if(list != null && list.size() > 0){
-			return list.get(0);
-		}
-		return null;
-	}
-	//修改用户状态
-	public void update(User existUser) {
-		System.out.println("来了");
-		this.getHibernateTemplate().update(existUser);
-	}
+	
 	//用户登录
 	public User login(User user) {
 		String hql="from User where username=? and password=? and state=?";

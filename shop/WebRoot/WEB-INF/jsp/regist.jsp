@@ -6,9 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>会员注册</title>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/register.css" rel="stylesheet" type="text/css"/>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 <script>
 	function checkForm(){
 		// 校验用户名:
@@ -75,27 +77,13 @@
 	
 	function change(){
 		var img1 = document.getElementById("checkImg");
-		img1.src="${pageContext.request.contextPath}/checkImg.action?"+new Date().getTime();
+		img1.src="${pageContext.request.contextPath}/checkImg.action?time="+new Date().getTime();
 	}
 </script>
 </head>
 <body>
-<div class="container header">
-	<div class="span5">
-		<div class="logo">
-			<a href="http://localhost:8080/mango/">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客">
-			</a>
-		</div>
-	</div>
-	<div class="span9">
-<div class="headerAd">
-					<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障">
-</div>	</div>
-	
-	<%@ include file="menu.jsp" %>
-
-</div>	<div class="container register">
+<%@ include file="head.jsp" %>
+	<div class="container register">
 		<div class="span24">
 			<div class="wrap">
 				<div class="main clearfix">
@@ -227,7 +215,7 @@
 								<dt>已经拥有账号了？</dt>
 								<dd>
 									立即登录即可体验在线购物！
-									<a href="${pageContext.request.contextPath}/user_loginPage.action">立即登录</a>
+									<a href="${ pageContext.request.contextPath }/user_loginPage.action">立即登录</a>
 								</dd>
 							</dl>
 						</div>
@@ -236,53 +224,5 @@
 			</div>
 		</div>
 	</div>
-<div class="container footer">
-	<div class="span24">
-		<div class="footerAd">
-					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势">
-</div>	</div>
-	<div class="span24">
-		<ul class="bottomNav">
-					<li>
-						<a >关于我们</a>
-						|
-					</li>
-					<li>
-						<a >联系我们</a>
-						|
-					</li>
-					<li>
-						<a >招贤纳士</a>
-						|
-					</li>
-					<li>
-						<a>法律声明</a>
-						|
-					</li>
-					<li>
-						<a >友情链接</a>
-						|
-					</li>
-					<li>
-						<a  target="_blank">支付方式</a>
-						|
-					</li>
-					<li>
-						<a  target="_blank">配送方式</a>
-						|
-					</li>
-					<li>
-						<a>服务声明</a>
-						|
-					</li>
-					<li>
-						<a >广告声明</a>
-						
-					</li>
-		</ul>
-	</div>
-	<div class="span24">
-		<div class="copyright">Copyright © 2005-2015 网上商城 版权所有</div>
-	</div>
-</div>
+<%@include file="foot.jsp" %>
 <div id="_my97DP" style="position: absolute; top: -1970px; left: -1970px;"><iframe style="width: 190px; height: 191px;" src="./会员注册 - Powered By Mango Team_files/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

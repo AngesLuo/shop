@@ -6,30 +6,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>网上商城购物车</title>
+<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/cart.css" rel="stylesheet" type="text/css"/>
-
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 
 </head>
 <body>
-<div class="container header">
-	<div class="span5">
-		<div class="logo">
-			<a href="http://localhost:8080/mango/">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客">
-			</a>
-		</div>
-	</div>
-	<div class="span9">
-<div class="headerAd">
-					<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障">
-</div>	</div>
-	
-	<%@ include file="menu.jsp" %>
-	
-</div>	<div class="container cart">
-		<s:if test="#session.cart.cartItems.size() != 0">
+	<%@ include file="head.jsp" %>
+	<div class="container cart">
+	<s:if test="#session.cart.cartItems.size()!=0">
 		<div class="span24">
 			<div class="step step1">
 				购物车信息
@@ -86,60 +74,12 @@
 		</div>
 		</s:if>
 		<s:else>
-			<div class="span24">
-				<div class="step step1">
-					<span><h2>亲!您还没有购物!请先去购物!</h2></span>
-				</div>
+		<div class="span24">
+			<div class="step step1">
+				<h2>亲，你还未购物<a href="index.jsp">请去购物</a></h2>
 			</div>
+		</div>
 		</s:else>
 	</div>
-<div class="container footer">
-	<div class="span24">
-		<div class="footerAd">
-					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势">
-</div>	</div>
-	<div class="span24">
-		<ul class="bottomNav">
-				<li>
-						<a >关于我们</a>
-						|
-					</li>
-					<li>
-						<a>联系我们</a>
-						|
-					</li>
-					<li>
-						<a>招贤纳士</a>
-						|
-					</li>
-					<li>
-						<a>法律声明</a>
-						|
-					</li>
-					<li>
-						<a>友情链接</a>
-						|
-					</li>
-					<li>
-						<a target="_blank">支付方式</a>
-						|
-					</li>
-					<li>
-						<a  target="_blank">配送方式</a>
-						|
-					</li>
-					<li>
-						<a>服务声明</a>
-						|
-					</li>
-					<li>
-						<a>广告声明</a>
-						
-					</li>
-		</ul>
-	</div>
-	<div class="span24">
-		<div class="copyright">Copyright © 2005-2015 网上商城 版权所有</div>
-	</div>
-</div>
+<%@include file="foot.jsp" %>
 </body></html>

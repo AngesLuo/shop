@@ -14,35 +14,35 @@
 			   	
 			time = setInterval(timer,1000);
 			$('.fl_s').hover(function(){
-			//清除定时器//显示图片
+//   		 		 清除定时器//显示图片
    		           clearInterval(time);
    		    $('.ups').css({'display':'block'});
         	},function(){
-			//回调函数//恢复定时器//隐藏图片
+//      		回调函数//恢复定时器//隐藏图片
         		$('.fl_s .ups').css({'display':'none'});
         		time = setInterval(timer,1000);
         	})
-			//右单击
+//			右单击
 				$('.fl_s .btn_right').click(function(){
 					c++;
 					c=(c==4)?0:c;
-			//获得的序号
+//					获得的序号
                   $('.fl_s .tu img').eq(c).stop().show().siblings().hide();
 
                 $('.fl_s .dos .dor a').eq(c).stop().addClass('dors').siblings().removeClass('dors');
 				})
-			//左单击
+//			左单击
 				$('.fl_s .btn_left').click(function(){
 					c--;
 					c=(c==0)?0:c;
-			//获得序号
+//					获得序号
 					$('.fl_s .tu img').eq(c).stop().show().siblings().hide();
 
                 $('.fl_s .dos .dor a').eq(c).stop().addClass('dors').siblings().removeClass('dors');
 				})
-			//点击变形
+//				点击变形
 				$('.fl_s .dos .dor a').click(function(){
-			//获得序号
+//					获得序号
 					var n = $(this).index();
 					
 					$('.fl_s .tu img').eq(n).stop().show().siblings().hide();
@@ -52,33 +52,21 @@
 				
             })
 //========轮播图结束================
-
 //========菜单下滑开始===============
-     $(function(){
+         $(function(){
          	 $(window).scroll(function(){
-			//获得滚动条滚动上去的距离
+//		获得滚动条滚动上去的距离
 		var t = $(document).scrollTop();
 		     document.title = t;
 		if (t>153) {
-			//让menu固定定位，通过添加一个f class值来实现
+//			让menu固定定位，通过添加一个f class值来实现
 			$("#nav").addClass('lalss');
 		}else{
 			$("#nav").removeClass('lalss');
 		}
 	    })
-    }) 
-
-//========菜单下滑结束===============
-//====按钮切换颜色
-     $(function(){
-        //点击事件
-     	$('.tss .ts1').click(function(){
-     		
-     		$(this).addClass('ts1s').siblings().removeClass('ts1s')
-     	})
-
-     	})
-     
+    })
+           
 //========菜单下滑结束===============
 //====按钮切换颜色
      $(function(){
@@ -86,8 +74,7 @@
      	$('.tss .ts1').click(function(){
      		
      		$(this).addClass('ts1s').siblings().removeClass('ts1s')
-     	})	 
-	 
+     	})
 //   	=============
 //   美丽说	tab切换上
      	$('.tp6_1 .tp6_2 .tp6_2_1').click(function(){
@@ -105,9 +92,10 @@
      			$(this).addClass('tp6_2_11').siblings('.tp6_2 .tp6_2_1').removeClass('tp6_2_11'),$('.tp7_3').eq(l).show().siblings().hide();
      		
      	})
-		
-//色块的移入的显示和影藏
-		$('.tp7_4').hover(function(){
+     	
+//   	=============
+//   	色块移入的显示和隐藏
+     	$('.tp7_4').hover(function(){
      		
      		$('.get',$(this)).show();
      	},function(){
@@ -115,25 +103,26 @@
      		$('.get',$(this)).hide();
      	})
 //   	===文字替换==
-		$('.udt').hover(function(){
-			$('.udt').innerHTML,$('.get .udt').html('取消关注')
-		},function(){
-			$('.udt').innerHTML,$('.get .udt').html('已关注')
-		})
-})
-     	
-//   	=============
-		
+        $('.udt').hover(function(){
+
+        $('.udt').innerHTML,$('.get .udt').html('取消关注')//替换文字
+        },function(){
+//回调函数
+        $('.udt').innerHTML,$('.get .udt').html('已关注')//替换文字
+        })
+     })
+
 //====按钮切换颜色
 $(function(){
-		//写一个移入显示、移出已隐藏//导航定位
-       $('#wsa').hover(function(){
-			$('#base',$(this)).stop().animate({'right':'0'},300);
-			},function(){
-			$('#base',$(this)).stop().animate({'right':'-38px'},300);	
-			}
-		)
-		//写一个移入显示、移出已隐藏//左侧定位
+//      写一个移入显示、移出已隐藏//导航定位
+        $('#wsa #adri').hover(function(){
+        	
+        	$('#base',$(this)).stop().animate({'right':'0'},300);
+        },function(){
+        	
+        	$('#base',$(this)).stop().animate({'right':'-38px'},300);
+        })
+//      写一个移入显示、移出已隐藏//左侧定位
         $('#adrc #adrcc a em').hover(function(){
         	
         	$('.red_gwc',$(this)).hide();
@@ -152,7 +141,7 @@ $(function(){
         	$('.w_xin',$(this)).hide();
         	$('.red_xin',$(this)).show();
         });
-		//写一个移入显示、移出已隐藏//左侧；返回顶部
+//      写一个移入显示、移出已隐藏//左侧；返回顶部
         $('#fans .top').hover(function(){
         	
         	$('.asda').show();
@@ -164,11 +153,11 @@ $(function(){
         })
         //写一个下滑显示效果
         $(window).scroll(function(){
-		//获得滚动条滚动上去的距离
+//		获得滚动条滚动上去的距离
 		var t = $(document).scrollTop();
 		     document.title = t;
 		if (t>150) {
-		//让menu固定定位，通过添加一个f class值来实现
+//			让menu固定定位，通过添加一个f class值来实现
 			$('#fans .top').show();
 		}else{
 			$('#fans .top').hide();

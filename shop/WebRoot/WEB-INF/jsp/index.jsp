@@ -1,36 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags"  prefix="s"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>网上商城</title>
+<title>美丽说购物网站</title>
 <link href="${pageContext.request.contextPath}/css/slider.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
 </head>
 <body>
-
-<div class="container header">
-	<div class="span5">
-		<div class="logo">
-			<a href="./网上商城/index.htm">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客"/>
-			</a>
+<%@include file="head.jsp" %>
+<!--轮播图片-->
+		  <div id="center">
+		<!--------分类导航开始----->
+		
+			<div class="fl_s">
+				<div class="tu">
+					<img src="${pageContext.request.contextPath}/image/nb1s1.jpg" alt="" style="display:block;" />
+				    <img src="${pageContext.request.contextPath}/image/nb1s2.jpg" alt="" />
+				    <img src="${pageContext.request.contextPath}/image/nb1s3.jpg" alt="" />
+				    <img src="${pageContext.request.contextPath}/image/nb1s4.jpg" alt="" />
+				</div>
+				<div class="ups">
+					<a href="javascript:void(0)" class="btn_left"></a>
+				    <a href="javascript:void(0)" class="btn_right"></a>
+				</div>
+				
+				<div class="dos">
+					<div class="dor">
+					    <a class="doro"></a>
+					    <a class="doro"></a>
+					    <a class="doro"></a>
+					    <a class="doro"></a>
+				    </div>
+				</div>
+			</div>
+			<div class="fl_s0">
+			<div class="fl_s1">
+				<div class="fl_s2">
+				<img src="${pageContext.request.contextPath}/image/bd1.jpg" alt="" />
+				<img src="${pageContext.request.contextPath}/image/bd2.jpg" alt="" />
+				<img src="${pageContext.request.contextPath}/image/bd3.jpg" alt="" />
+				<img src="${pageContext.request.contextPath}/image/bd4.gif" alt="" />
+				<img src="${pageContext.request.contextPath}/image/bd5.jpg" alt="" />
+				</div>
+			</div>
+			</div>
 		</div>
-	</div>
-	<div class="span9">
-<div class="headerAd">
-	<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障"/>
-</div>	
-</div>
-	
-	<%@ include file="menu.jsp" %>
-
-</div>	
-
+		<!--轮播图片结束-->
 <div class="container index">
 		
 
@@ -55,11 +77,11 @@
 			<img src="${pageContext.request.contextPath}/image/a.jpg" width="260" height="343" alt="热门商品" title="热门商品">
 </div> -->
 						<ul class="tabContent" style="display: block;">
-							<s:iterator var="p" value="hList">
+									<s:iterator value="hList" var="p">
 									<li>
 										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg" style="display: block;"></a>
 									</li>
-							</s:iterator>		
+									</s:iterator>
 						</ul>
 						<ul class="tabContent" style="display: none;">
 									<li>
@@ -137,11 +159,11 @@
 						</div>
 						 -->						
 						 <ul class="tabContent" style="display: block;">
-						 	<s:iterator var="p" value="nList">
+								 <s:iterator value="nList" var="p">
 									<li>
-										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg" style="display: block;"></a>									</li>
+										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg" style="display: block;"></a>								
 									</li>
-							</s:iterator>		
+								</s:iterator>
 						</ul>
 						<ul class="tabContent" style="display: none;">
 									<li>
@@ -241,54 +263,5 @@
 			</div>
 		</div>
 	</div>
-<div class="container footer">
-	<div class="span24">
-		<div class="footerAd">
-					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势">
-</div>	</div>
-	<div class="span24">
-		<ul class="bottomNav">
-					<li>
-						<a>关于我们</a>
-						|
-					</li>
-					<li>
-						<a>联系我们</a>
-						|
-					</li>
-					<li>
-						<a>招贤纳士</a>
-						|
-					</li>
-					<li>
-						<a>法律声明</a>
-						|
-					</li>
-					<li>
-						<a>友情链接</a>
-						|
-					</li>
-					<li>
-						<a target="_blank">支付方式</a>
-						|
-					</li>
-					<li>
-						<a target="_blank">配送方式</a>
-						|
-					</li>
-					<li>
-						<a>服务声明</a>
-						|
-					</li>
-					<li>
-						<a>广告声明</a>
-						
-					</li>
-		</ul>
-	</div>
-	<div class="span24">
-		<div class="copyright">Copyright © 2005-2015 网上商城 版权所有</div>
-	</div>
-</div>
-</body>
-</html>
+<%@include file="foot.jsp" %>
+</body></html>
