@@ -43,6 +43,14 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 	public void setPage(int page) {
 		this.page = page;
 	}
+	//接收关键字
+	private String keyword;
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	public String getKeyword() {
+		return keyword;
+	}
 
 	//接受分类cid
 	private Integer cid;
@@ -82,4 +90,12 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 				ActionContext.getContext().getValueStack().set("pageBean", pageBean);
 		return "findByCsid";
 	}
+	//根据关键字找出商品
+	public String findByword(){
+		PageBean<Product> pageBean = productService.findByPageWord(keyword, page);// 根据一级分类查询商品,带分页查询
+		//将pagebean存入值栈中
+		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
+		return "findByword";
+	}
+
 }

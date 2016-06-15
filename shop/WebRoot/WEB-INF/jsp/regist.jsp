@@ -6,7 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>会员注册</title>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
+ <link rel="icon" href="${pageContext.request.contextPath}/img/logo.png"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/register.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
@@ -79,10 +80,18 @@
 		var img1 = document.getElementById("checkImg");
 		img1.src="${pageContext.request.contextPath}/checkImg.action?time="+new Date().getTime();
 	}
+	
+	function sou(){
+	var keyword=document.getElementById("sousuo").value;
+	var a=document.getElementById("sou");
+	a.href="${pageContext.request.contextPath}/product_findByword.action?keyword="+keyword+"&page=1";
+	}
 </script>
 </head>
 <body>
 <%@ include file="head.jsp" %>
+<div class="container index">
+		<div class="span24">
 	<div class="container register">
 		<div class="span24">
 			<div class="wrap">
@@ -223,6 +232,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 <%@include file="foot.jsp" %>
 <div id="_my97DP" style="position: absolute; top: -1970px; left: -1970px;"><iframe style="width: 190px; height: 191px;" src="./会员注册 - Powered By Mango Team_files/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

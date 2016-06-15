@@ -60,15 +60,15 @@
 		}
 		/*------li--------*/
 		.wx{
-			background: url(./image/wx.png) no-repeat;
+			background: url(../image/wx.png) no-repeat;
             padding: 1px 11px;
 		}
 		.qq{
-			background: url(./image/bg.png) no-repeat -186px -21px;
+			background: url(../image/bg.png) no-repeat -186px -21px;
 			padding: 1px 12px;
 		}
 		.gwc{
-			background: url(./image/bg.png) no-repeat  0 -164px;
+			background: url(../image/bg.png) no-repeat  0 -164px;
 			padding: 1px 11px;
 		}
 		.tip{
@@ -77,15 +77,15 @@
             padding: 0 6px;
 		}
 		.dtan{
-			background: url(./image/bg.png) no-repeat  -223px -45px;
+			background: url(../image/bg.png) no-repeat  -223px -45px;
 			padding: 1px 11px;
 		}
 		.hyuan{
-			background: url(./image/hyuan.png) no-repeat;
+			background: url(../image/hyuan.png) no-repeat;
 			padding: 1px 11px;
 		}
 		.app{
-			background: url(./image/bg.png) no-repeat  -170px -45px;
+			background: url(../image/bg.png) no-repeat  -170px -45px;
 			padding: 1px 12px;
 		}
 		.arrow {
@@ -95,7 +95,7 @@
             line-height: 30px;
             margin-top: 10px;
             display: inline-block;
-            background: url(./image/bg.png) no-repeat  -20px -70px;
+            background: url(../image/bg.png) no-repeat  -20px -70px;
             padding: 0;
         }
 		/*---------图片----------*/
@@ -255,6 +255,12 @@
 			line-height: 32px;
 			background: #FF6699 url(./image/soso.png) no-repeat center;
 		}
+		. tss1 a{
+			color:white;
+		}
+		.tss1 a:hover{
+			color:white;
+		}
 		.ts a{
 			color: #666666;
 		}
@@ -365,7 +371,7 @@
             position: absolute;
             bottom: 9px;
             right: -5px;
-            background: url(./image/black_triangle.png) no-repeat;
+            background: url(../image/black_triangle.png) no-repeat;
 		}
 		/*==imgcc==*/
 		#right_1{
@@ -374,13 +380,13 @@
 		.red_yh{
 			width: 18px;
             height: 13px;
-            background: url(./image/youhuih.png) no-repeat;
+            background: url(../image/youhuih.png) no-repeat;
             display: block;
 		}
 		.w_yh{
 			width: 18px;
             height: 13px;
-            background: url(./image/youhui.png) no-repeat;
+            background: url(../image/youhui.png) no-repeat;
             display: none;
 		}
 		#right_2{
@@ -389,13 +395,13 @@
 		.red_like{
 			width: 18px;
             height: 16px;
-            background: url(./image/red_like.png) no-repeat;
+            background: url(../image/red_like.png) no-repeat;
             display: block;
 		}
 		.w_like{
 			width: 18px;
             height: 16px;
-            background: url(./image/w_like.png) no-repeat;
+            background: url(../image/w_like.png) no-repeat;
             display: none;
 		}
 		#right_3{
@@ -404,13 +410,13 @@
 		.red_feed{
 			width: 18px;
             height: 16px;
-            background: url(./image/red_feed.png) no-repeat;
+            background: url(../image/red_feed.png) no-repeat;
             display: block;
 		}
 		.w_feed{
 			width: 18px;
             height: 16px;
-            background: url(./image/w_feed.png) no-repeat;
+            background: url(../image/w_feed.png) no-repeat;
             display: none;
 		}
 		/*///*/
@@ -458,7 +464,7 @@
             height: 13px;
             margin-top: 27px;
             margin-left: 10px;
-            background: url(./image/gwc-p.png) no-repeat;
+            background: url(../image/gwc-p.png) no-repeat;
             display: block;
 	    }
 	    .w_gwc{
@@ -466,7 +472,7 @@
             height: 13px;
             margin-top: 27px;
             margin-left: 10px;
-	    	background: url(./image/gwc-w.png) no-repeat;
+	    	background: url(../image/gwc-w.png) no-repeat;
 	    	display: none;
 	    }
 	    #adrcc span{
@@ -498,14 +504,14 @@
 	    	width: 15px;
             height: 14px;
             margin-left: 11px;
-            background: url(./image/xinxi-p.png) no-repeat;
+            background: url(../image/xinxi-p.png) no-repeat;
             display: block;
 	    }
 	    .w_xin{
 	    	width: 15px;
             height: 14px;
             margin-left: 11px;
-	    	background: url(./image/xinxi-w.png) no-repeat;
+	    	background: url(../image/xinxi-w.png) no-repeat;
 	    	display: none;
 	    }
 	    #adrcg span{
@@ -541,7 +547,7 @@
             height: 7px;
             margin-top: 13px;
             margin-left: 11px; 
-            background: url(./image/tops.png);
+            background: url(../image/tops.png);
             display: block;
 	    }
 	    #fans .top .asda{
@@ -612,7 +618,7 @@
 		}
 		#ds li a:hover{
 			color: #FF6699;
-			border-bottom: 3px solid #FF6699;
+			border-bottom: 2px solid #FF6699;
 		}
 		.ds3{
 			float: left;
@@ -627,7 +633,7 @@
 		}
 		.ds3 a:hover{
 			color: #FF6699;
-			border-bottom: 3px solid #FF6699;
+			border-bottom: 2px solid #FF6699;
 		}
 		.ds4{
 			float: left;
@@ -656,7 +662,7 @@
 		}
 		.ds6 a:hover{
 			color: #FF6699;
-			border-bottom: 3px solid #FF6699;
+			border-bottom: 2px solid #FF6699;
 		}
 		.ds6{
 			float: left;
@@ -671,7 +677,7 @@
 		}
 		.ds7 a:hover{
 			color: #FF6699;
-			border-bottom: 3px solid #FF6699;
+			border-bottom: 2px solid #FF6699;
 		}
 		.ds7{
 			float: left;
@@ -686,7 +692,7 @@
 		}
 		.ds8 a:hover{
 			color: #FF6699;
-			border-bottom: 3px solid #FF6699;
+			border-bottom: 2px solid #FF6699;
 		}
 		.ds8{
 			float: left;
@@ -829,7 +835,7 @@
 			vertical-align: middle;
 		}
 		.dssss{
-			background: url(./image/bg.png) no-repeat center;
+			background: url(../image/bg.png) no-repeat center;
 			background-position:  -16px -62px;
 			padding: 1px 6px;
 		}
@@ -975,7 +981,7 @@
 		.btn_left{
 			width: 34px;
 			height: 44px;
-			background: url(./image/btn_left1.png) no-repeat;
+			background: url(../image/btn_left1.png) no-repeat;
 			position: absolute;
 			left: 0;
 			top: 200px;
@@ -984,7 +990,7 @@
 		.btn_right{
 			width: 34px;
 			height: 44px;
-			background: url(./image/btn_right1.png) no-repeat;
+			background: url(../image/btn_right1.png) no-repeat;
 			position: absolute;
 			right: 0;
 			top: 200px;
@@ -1111,7 +1117,7 @@
 			color: #FF6699;
 		}
 		.tps{
-			background: url(./image/tps.png) no-repeat -13px -175px;
+			background: url(../image/tps.png) no-repeat -13px -175px;
 			padding: 6px 2px;
 		}
 		/*--------护栏结束--------*/
@@ -1190,7 +1196,7 @@
 			line-height: 20px;
 		}
 		.tp3_4 .linek{
-			background: url(./image/tps.png) no-repeat 0px -23px;
+			background: url(../image/tps.png) no-repeat 0px -23px;
 			padding-left: 20px;
 			color: #999999;
 			float: right;
@@ -1294,7 +1300,7 @@
 			float: left;
 			color: #f69;
 			line-height: 25px;
-			background: url(./image/tps.png) no-repeat -5px -2px;
+			background: url(../image/tps.png) no-repeat -5px -2px;
 			padding-left:40px;
 		}
 		.bqz a{
@@ -1532,7 +1538,7 @@
 		/*---------------8区结束------------*/
 		/*---------------9区开始------------*/
 		.tp9_9{
-			background: url(./image/tps.png) no-repeat -9px -205px;
+			background: url(../image/tps.png) no-repeat -9px -205px;
 			padding-right: 12px;
 			
 		}
@@ -1544,7 +1550,7 @@
 			margin-left: 0;
 			margin-top: 40px;
 			float: left;
-			background: url(./image/disss.jpg);
+			background: url(../image/disss.jpg);
 		}
 		/*---------------10区结束------------*/
 				/*---------图片区域结束-------------*/
@@ -1580,7 +1586,7 @@
 			line-height: 40px;
 			float: left;
 			margin-top: 20px;
-			background: url(./image/bg.png) no-repeat 0 -114px;
+			background: url(../image/bg.png) no-repeat 0 -114px;
 			padding-left: 0 48px;
 		}
 		.dzi1{
@@ -1644,7 +1650,7 @@
             margin-top: 5px;
             margin-right: 5px;
             float: left;
-            background: url(./image/bg.png) no-repeat 0 -21px;
+            background: url(../image/bg.png) no-repeat 0 -21px;
             padding: 0;
 		}
 		.fx2{
@@ -1653,7 +1659,7 @@
             margin-top: 5px;
             margin-right: 5px;
             float: left;
-            background: url(./image/bg.png) no-repeat -73px -21px;
+            background: url(../image/bg.png) no-repeat -73px -21px;
             padding: 0;
 		}
 		.fx3{
@@ -1662,7 +1668,7 @@
             margin-top: 5px;
             margin-right: 5px;
             float: left;
-            background: url(./image/bg.png) no-repeat -49px -21px;
+            background: url(../image/bg.png) no-repeat -49px -21px;
             padding: 0;
 		}
 		/*-----------------------*/
@@ -1692,7 +1698,7 @@
 			height: 100px;
 			float: right;
 			margin-top: 10px;
-			background: url(./image/bg.png) no-repeat 0 -400px;
+			background: url(../image/bg.png) no-repeat 0 -400px;
 			padding: 0;
 		}
 		/*-----------------------*/

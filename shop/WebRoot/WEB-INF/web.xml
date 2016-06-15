@@ -26,7 +26,18 @@
 	<dispatcher>REQUEST</dispatcher>
 
 </filter-mapping>
-	
+<filter>
+        <filter-name>ChineseFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>ChineseFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>	
   <display-name></display-name>	
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

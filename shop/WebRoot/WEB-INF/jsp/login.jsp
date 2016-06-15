@@ -12,10 +12,18 @@
 <link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
-
+<script>
+	function sou(){
+	var keyword=document.getElementById("sousuo").value;
+	var a=document.getElementById("sou");
+	a.href="${pageContext.request.contextPath}/product_findByword.action?keyword="+keyword+"&page=1";
+	}
+</script>
 </head>
 <body>
 	<%@ include file="head.jsp" %>
+<div class="container index">
+	<div class="span24">
 <div class="container login">
 		<div class="span12">
 <div class="ad">
@@ -90,6 +98,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 <%@include file="foot.jsp" %>
 </body></html>

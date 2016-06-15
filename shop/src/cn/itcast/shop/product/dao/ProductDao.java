@@ -110,5 +110,23 @@ public class ProductDao extends HibernateDaoSupport{
 	public void update(Product product) {
 		this.getHibernateTemplate().update(product);
 	}
+	//根据关键字查找
+	public int findCountWord(String keyword) {
+		String hql="select count(*) from Product p join p.categorySecond cs join cs.category c where pname like"+"'%"+keyword+"%' or pdesc like"+"'%"+keyword+"%' or cs.csname like"+"'%"+keyword+"%' or c.cname like"+"'%"+keyword+"%'";
+		List<Long> list=this.getHibernateTemplate().find(hql);
+		if(list!=null&&list.size()>0){
+			return list.get(0).intValue();
+		}
+		return 0;
+	}
+	//根据关键字查找商品集合
+	public List<Product> findByPageword(String keyword, int begin, int limit) {
+		String hql="select p from Product p join p.categorySecond cs join cs.category c where pname like"+"'%"+keyword+"%' or pdesc like"+"'%"+keyword+"%' or cs.csname like"+"'%"+keyword+"%' or c.cname like"+"'%"+keyword+"%'";
+		List<Product> list=this.getHibernateTemplate().execute(new PageHibernateCallback<Product>(hql, null, begin, limit));
+		if(list!=null&&list.size()>0){
+			return list;
+		}
+		return null;
+	}
 
 }

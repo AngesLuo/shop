@@ -9,7 +9,7 @@
 				   </s:if>
 					<s:else>
 					<li class="line5"><a href="${ pageContext.request.contextPath }/user_loginPage.action">欢迎你：<s:property value="#session.existUser.name"/></a></li>
-				   	<li class="line5"><a href="${ pageContext.request.contextPath }/cart_myCart.action"><em class="gwc"></em>我的购物车<span class="tip">0</span></a></li>
+				   	<li class="line5"><a href="${ pageContext.request.contextPath }/cart_myCart.action"><em class="gwc"></em>我的购物车<span class="tip"></span></a></li>
 				   	<li class="line5"><a href="${ pageContext.request.contextPath }/order_findByUid.action?page=1"><em class="dtan"></em>我的订单</a></li>
 					<li class="line6"><a href="${ pageContext.request.contextPath }/user_quit.action">退出</a></li>
 				   	</s:else>
@@ -41,9 +41,10 @@
 						<span class="ts1" data-type="1">店铺</span>					
 					</div>
 					<div class="tss1">
-						<input type="" name="" class="td" onfocus="if(this.value=='运动鞋陪你逛多久不累')this.value=''" onblur="if(this.value=='') this.value='运动鞋陪你逛多久不累'"style="color: #666666;" value="衬衫不是“他”的专属" ></input>
-						<span class="tds"></span>					
+						<input type="" name="" id="sousuo" class="td" onfocus="if(this.value=='运动鞋陪你逛多久不累')this.value=''" onblur="if(this.value=='') this.value='运动鞋陪你逛多久不累'"style="color: #666666;" value="衬衫不是“他”的专属" ></input>
+						<a href ="javascript:sou()" class="tds" id="sou" style="font-size:16px;color:white;">&nbsp;&nbsp;搜     索</a>					
 					</div>
+					<!--  
 					<div class="tss2">
 						<div class="ts">
 							<a href="">外套</a>
@@ -59,6 +60,7 @@
 										
 						</div>
 					</div>
+					-->
 				</div>
 			</div>			
 		</div>
@@ -124,7 +126,7 @@
 		  <div id="dh">
 			<div id="ds">
 				<ul>
-				<li><a href="" class="ds1">首页</a></li>
+				<li><a href="${ pageContext.request.contextPath }/index.action" class="ds1">首页</a></li>
 			 	<s:iterator var="c" value="#session.CList">
 					<li><a href="${ pageContext.request.contextPath }/product_findByCid.action?cid=<s:property value="#c.cid"/>&page=1 " class="ds2"><s:property value="#c.cname"/></a></li>
 					<!-- 

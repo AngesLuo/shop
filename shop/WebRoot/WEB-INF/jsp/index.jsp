@@ -6,12 +6,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>美丽说购物网站</title>
+ <link rel="icon" href="${pageContext.request.contextPath}/img/logo.png"/>
 <link href="${pageContext.request.contextPath}/css/slider.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
+<script>
+	function sou(){
+	var keyword=document.getElementById("sousuo").value;
+	var a=document.getElementById("sou");
+	a.href="${pageContext.request.contextPath}/product_findByword.action?keyword="+keyword+"&page=1";
+	}
+</script>
 </head>
 <body>
 <%@include file="head.jsp" %>

@@ -7,14 +7,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>美丽说购物网站</title>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
+ <link rel="icon" href="${pageContext.request.contextPath}/img/logo.png"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/product.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
+<script>
+	function sou(){
+	var keyword=document.getElementById("sousuo").value;
+	var a=document.getElementById("sou");
+	a.href="${pageContext.request.contextPath}/product_findByword.action?keyword="+keyword+"&page=1";
+	}
+</script>
 </head>
 <body>
 <%@ include file="head.jsp" %>	
+<div class="container index">
+<div class="span24">
 <div class="container productList">
 		<div class="span6">
 			<div class="hotProductCategory">
@@ -99,9 +109,31 @@
 				<a class="lastPage" href="${ pageContext.request.contextPath }/product_findByCsid.action?csid=<s:property value="csid"/>&page=<s:property value="pageBean.totalPage"/>">&nbsp;</a>
 			</s:if>
 		</s:if>	
+		<s:if test="keyword != null">
+			<s:if test="pageBean.page != 1">
+				<a href="${pageContext.request.contextPath}/product_findByword.action?keyword=<s:property value="keyword"/>&page=1" " class="firstPage">&nbsp;</a>
+				<a href="${pageContext.request.contextPath}/product_findByword.action?keyword=<s:property value="keyword"/>&page=<s:property value="pageBean.page-1"/>" class="previousPage">&nbsp;</a>
+			</s:if>
+			
+			<s:iterator var="i" begin="1" end="pageBean.totalPage">
+				<s:if test="pageBean.page != #i">
+					<a href="${pageContext.request.contextPath}/product_findByword.action?keyword=<s:property value="keyword"/>&page=<s:property value="#i"/>"><s:property value="#i"/></a>
+				</s:if>
+				<s:else>
+					<span class="currentPage"><s:property value="#i"/></span>
+				</s:else>
+			</s:iterator>
+			
+			<s:if test="pageBean.page != pageBean.totalPage">	
+				<a class="nextPage" href="${pageContext.request.contextPath}/product_findByword.action?keyword=<s:property value="keyword"/>&page=<s:property value="pageBean.page+1"/>">&nbsp;</a>
+				<a class="lastPage" href="${pageContext.request.contextPath}/product_findByword.action?keyword=<s:property value="keyword"/>&page=<s:property value="pageBean.totalPage"/>">&nbsp;</a>
+			</s:if>
+		</s:if>	
 	</div>
 			</form>
 		</div>
 	</div>
+</div>
+</div>
 <%@include file="foot.jsp" %>
 </body></html>
